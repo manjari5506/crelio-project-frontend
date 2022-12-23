@@ -1,0 +1,55 @@
+.staffnav-wrapper{
+    display:flex;
+    flex-direction: row;
+    overflow: hidden;
+    padding-left:5vw;
+    padding-right:5vw;
+    max-height: 40px !important;
+    z-index:1;
+    background-color: white;
+    color:rgb(4, 4, 170);
+}
+.staffnav-menu{
+    padding-top:.2vw;
+    padding-bottom: .2vw;
+    margin-right: auto;
+    margin-left: auto;
+    display:flex;
+    flex-direction: row;
+    overflow: hidden;
+    float: right;
+    font-size: 1.2vw;    
+}
+.staffnav-menu>ul{
+    padding-top: .2vw;
+    padding-bottom: .2vw;
+    padding-right: .8vw;
+    padding-left: .8vw;
+    display: flex;
+    overflow: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;     
+}
+.menulinks{
+padding-top: .5vw;
+padding-bottom: .5vw;
+padding-left: .2vw;
+padding-right: .2vw;
+text-align: center;
+color: #343a40;
+text-decoration: none;
+font-weight: 500;
+}
+.menulinks:hover{
+    cursor: pointer;
+    color:rgb(4, 4, 170);
+    transition: all .5s ease-in-out 0s;
+}
+.menulinks-active{
+    color:rgb(4, 4, 170);
+    text-decoration: none;
+    font-weight: 500;
+    /* transition: all .5s ease-in-out 0s; */
+}          

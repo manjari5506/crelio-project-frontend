@@ -1,0 +1,42 @@
+//For login
+export const LOGIN_LOADING="LOGIN LOADING";
+export const LOGIN_SUCCESS="LOGIN_SUCCESS";
+export const LOGIN_ERROR="LOGIN_ERROR";
+
+//For Signup
+export const SIGNUP_LOADING="SIGNUP_LOADING";
+export const SIGNUP_SUCCESS="SIGNUP_SUCCESS";
+export const SIGNUP_ERROR="SIGNUP_ERROR";
+
+//For Profile Fetch
+export const PROFILE_LOADING="PROFILE_LOADING";
+export const PROFILE_SUCCESS="PROFILE_SUCCESS";
+export const PROFILE_ERROR="PROFILE_ERROR";
+
+//For Student List
+export const LIST_LOADING="LIST_LOADING";
+export const LIST_SUCCESS="LIST_SUCCESS";
+export const LIST_ERROR="LIST_ERROR";
+
+//For Log out
+export const STAFF_LOGOUT="STAFF_LOGOUT";
+
+//For adding Course
+export const ADD_COURSE_LOADING="ADD_COURSE_LOADING";
+export const ADD_COURSE_SUCCESS="ADD_COURSE_SUCCESS";
+export const ADD_COURSE_ERROR="ADD_COURSE_ERROR";
+
+//For getting Test
+export const GET_COURSE_LOADING="GET_COURSE_LOADING";
+export const GET_COURSE_SUCCESS="GET_COURSE_SUCCESS";
+export const GET_COURSE_ERROR="GET_COURSE_ERROR";
+
+//TO ADD TESTS
+export const ADD_TEST_LOADING="ADD_TEST_LOADING";
+export const ADD_TEST_SUCCESS="ADD_TEST_SUCCESS";
+export const ADD_TEST_ERROR="ADD_TEST_ERROR";
+
+//To get tests
+export const GET_TEST_LOADING="GET_TEST_LOADING";
+export const GET_TEST_SUCCESS="GET_TEST_SUCCESS";
+export const GET_TEST_ERROR="GET_TEST_ERROR";

@@ -1,0 +1,285 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+.form-wrapper{
+    max-width: min-content!important;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 2.5px;
+    display:flex;
+    flex-direction: column;
+    margin-top: 50px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    position: relative;
+}
+.form-label{
+   margin-top:15px;
+   margin-bottom: 2px;
+   padding: 0px;
+   font-size: 1.25vw;
+   color:black;
+   font-weight: 550;
+}
+.form-input{
+    width:25vw;
+    height:2vw;
+    font-size: 1.25vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border:.2px solid gray;
+    border-radius: 2.5px;
+    outline: none;
+    color:rgb(4, 4, 170);
+    cursor: pointer;
+}
+/* for alert */
+.form-input-alert{
+    width:25vw;
+    height:2vw;
+    font-size: 1vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border:1px solid black;
+    border-radius: 2.5px;
+    outline: none;
+    color:black;
+    cursor: pointer;
+}
+
+.course-form-input{
+    width:55vw;
+    height:2.25vw;
+    font-size: 1.25vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border:.5px solid rgb(4, 4, 170);
+    border-radius: 2.5px;
+    outline: none;
+    color:rgb(4, 4, 170);
+    cursor: pointer;
+}
+.course-form-textfield{
+    width:55vw;
+    /* height:2vw; */
+    font-size: 1.15vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border:.5px solid rgb(4, 4, 170);
+    border-radius: 2.5px;
+    outline: none;
+    color:rgb(4, 4, 170);
+    cursor: pointer;
+}
+
+.course-form-input:focus{
+    outline: none;
+    border:1px solid rgb(4, 4, 170);
+}
+.course-form-textfield:focus{
+    outline: none;
+    border:1.5px solid rgb(4, 4, 170);
+}
+.form-input:focus{
+    outline: none;
+    border:1px solid rgb(4, 4, 170);
+}
+.form-button{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 10vw;
+    height: 2.5vw;
+    background-color: white;
+    color:rgb(4, 4, 170);
+    border-radius: 5px;
+    font-size: 1.5vw;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+}
+.form-button:hover{
+    background-color: rgb(164, 159, 159);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+.register-form-select{
+    width:25.2vw;
+    height:2.3vw;
+    font-size: 1.25vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border:.5px solid rgb(4, 4, 170);
+    border-radius: 2.5px;
+    outline: none;
+    color:rgb(4, 4, 170);
+    cursor: pointer;
+}
+.register-form-select-alert{
+    width:25.2vw;
+    height:2.3vw;
+    font-size: 1vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border:.1.5px solid black;
+    border-radius: 2.5px;
+    outline: none;
+    color:black;
+    cursor: pointer;
+}
+.register-form-select-alert{
+    outline: none;
+    border:1px solid rgb(4, 4, 170);
+}
+.register-form-select:focus{
+    outline: none;
+    border:1px solid rgb(4, 4, 170);
+}
+
+/* @media only screen and (max-width: 769px){
+    .form-input{
+        width:40vw;
+        height:2vw;
+        font-size: 1.25vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border:.5px solid #28a745;
+        border-radius: 2.5px;
+        outline: none;
+        color:#28a745;
+        cursor: pointer;
+    }
+    .register-form-select{
+        width:40vw;
+        height:2.3vw;
+        font-size: 1.25vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border:.5px solid #28a745;
+        border-radius: 2.5px;
+        outline: none;
+        color:#28a745;
+        cursor: pointer;
+    }
+
+    .register-form-select-alert{
+        width:40vw;
+        height:2.5vw;
+        font-size: 1vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border:.1.5px solid #ED4F32;
+        border-radius: 2.5px;
+        outline: none;
+        color:#ED4F32;
+        cursor: pointer;
+    }
+}
+@media only screen and (max-width: 425px){
+    .form-input{
+        width:50vw;
+        height:2vw;
+        font-size: 1.25vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border:.5px solid #28a745;
+        border-radius: 2.5px;
+        outline: none;
+        color:#28a745;
+        cursor: pointer;
+    }
+    .form-button{
+        margin-top: 2vw;
+        margin-bottom: 1vw;
+        width: 15vw;
+        height: 4vw;
+        background-color: white;
+        color:#28a745;
+        border:1px solid #28a745;
+        border-radius: 5px;
+        font-size: 2vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .form-input-alert{
+        width:50vw;
+        height:2vw;
+        font-size: 1vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border:1.5px solid #ED4F32;
+        border-radius: 2.5px;
+        outline: none;
+        color:#ED4F32;
+        cursor: pointer;
+    }
+    .register-form-select{
+        width:50vw;
+        height:2.5vw;
+        font-size: 1.25vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border:.5px solid #28a745;
+        border-radius: 2.5px;
+        outline: none;
+        color:#28a745;
+        cursor: pointer;
+    }
+
+    .register-form-select-alert{
+        width:50vw;
+        height:2.5vw;
+        font-size: 1vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border:.1.5px solid #ED4F32;
+        border-radius: 2.5px;
+        outline: none;
+        color:#ED4F32;
+        cursor: pointer;
+    } 
+}*/
+.course-form-select{
+    width:55vw;
+    height:2.5vw;
+    font-size: 1.25vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border:.5px solid rgb(4, 4, 170);
+    border-radius: 2.5px;
+    outline: none;
+    color:rgb(4, 4, 170);
+    cursor: pointer;
+}

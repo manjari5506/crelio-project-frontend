@@ -1,0 +1,66 @@
+.nav-wrapper{
+    display:flex;
+    flex-direction: row;
+    padding-left:1.5vw;
+    padding-right:1.5vw;
+    height: 80px !important;
+    background-color: rgb(201, 197, 197);
+    color:rgb(4, 4, 170);
+    
+}
+/* .navbar-logo{
+    text-decoration: none;
+    font-size: 2vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: 800;
+    color:black;
+    text-transform: uppercase 
+}
+.logonav:hover{
+        cursor: pointer;
+} */
+.menu{
+      padding-top:.2vw;
+      padding-bottom: .2vw;
+      margin-right: 0px;
+      margin-left: auto;
+      display:flex;
+      flex-direction: row;
+      overflow: hidden;
+      float: right;
+      font-size: 1.2vw;    
+}
+.menu>ul{
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        padding-right: 0.8vw;
+        padding-left: 0.8vw;
+        display: flex;
+        overflow: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;     
+}
+.menulinks{
+ padding-top: .5vw;
+ padding-bottom: .5vw;
+ padding-left: .2vw;
+ padding-right: .2vw;
+ text-align: center;
+ color: #343a40;
+ text-decoration: none;
+ font-weight: 500;
+}
+.menulinks:hover{
+        cursor: pointer;
+        color:rgb(4, 4, 170);
+        /* transition: all .5s ease-in-out 0s; */
+}
+.menulinks-active{
+        color:rgb(4, 4, 170);
+        text-decoration: none;
+        font-weight: 500;
+        /* transition: all .5s ease-in-out 0s; */
+}       
