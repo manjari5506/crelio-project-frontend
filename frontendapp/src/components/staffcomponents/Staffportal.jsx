@@ -56,7 +56,6 @@ useEffect(()=>{
 
           <p className='profile-label'>Staff ID</p>
 
-          <p className='profile-label'>Designation</p>
           </div>
           <div className="profile2">
 
@@ -66,7 +65,6 @@ useEffect(()=>{
 
           <p className='profile-info'>{el.Staff_id}</p>
 
-          <p className='profile-info'>{el.Designation}</p>
 
           </div>
           </div>

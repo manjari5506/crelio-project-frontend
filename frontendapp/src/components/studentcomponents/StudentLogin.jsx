@@ -18,8 +18,9 @@ const StudentLogin = () => {
   let login=()=>{
     dispatch(loginLoading())
       axios({
-          method:"post",
-          url: 'http://localhost:8000/std/student/',
+          method:'all',
+          url: 'http://localhost:8000/std/student/?format=api',
+          //url: 'http://localhost:8000/std/student/',
           data:{Email:email,
           Password:password}
       }).then((response)=>{

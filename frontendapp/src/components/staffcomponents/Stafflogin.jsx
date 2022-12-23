@@ -11,14 +11,14 @@ const Stafflogin = () => {
   
   const[email,setEmail]=useState("");
   const[password,setPassword]=useState("");
-  const[confirmpass,setConformpass]=useState("");
+  //const[confirmpass,setConformpass]=useState("");
   const dispatch=useDispatch();
   const navigate = useNavigate();
   let login=()=>{
     dispatch(loginLoading())
         axios({
           method:"post",
-          url: 'http://localhost:8000/staff/staff/',
+          url: 'http://localhost:8000/staff/staff',
           data:{Email:email,
           Password:password}
       }).then((response)=>{
@@ -55,16 +55,6 @@ const Stafflogin = () => {
       targetpass.type="text";  
       targetpass.value="⚠ Please enter password";
     }
-    else if(!confirmpass){
-      targetconfirmpass.className="form-input-alert"; 
-      targetconfirmpass.type="text";
-      targetconfirmpass.value="⚠ Please confirm password"
-    }
-    else if(password!==confirmpass){
-      targetconfirmpass.className="form-input-alert";
-      targetconfirmpass.type="text";
-      targetconfirmpass.value="⚠ Password and Confirm passsword should be same";
-    }
     else{
     login();
     }
@@ -90,14 +80,14 @@ const Stafflogin = () => {
           e.target.value=""
           e.target.type="password"})}
           />
-         <p className='form-label'>Confirm Password</p>
+         {/* <p className='form-label'>Confirm Password</p>
          
          <input id="confirm" className="form-input" type='password' value={confirmpass} 
          onChange={(event=>setConformpass(event.target.value))}
          onFocus={(e=>{e.target.className="form-input"
          e.target.value=""
          e.target.type="password"})}
-         />
+         /> */}
          <button className='form-button' onClick={handleLogin}>Login</button>
     </div>
     </>

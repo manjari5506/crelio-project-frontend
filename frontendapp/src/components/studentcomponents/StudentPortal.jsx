@@ -21,7 +21,7 @@ let logout=()=>{
   let getuser=()=>{
     dispatch(profileLoading())
       axios({
-        method: "post",
+        method: "all",
         url: 'http://localhost:8000/std/loggedinstudent/',
         data:{
           Email:token.Email,
