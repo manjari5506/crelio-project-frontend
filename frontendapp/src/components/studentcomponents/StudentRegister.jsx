@@ -18,7 +18,7 @@ let registerStudent =()=>{
 dispatch(signupLoading());
 axios({
     method: "post",
-    url: 'http://localhost:8000/student/student/',
+    url: 'http://localhost:8000/std/student/',
     data:{
       Name:name,
       Email:email,
@@ -59,30 +59,15 @@ let emailcheck= /\S+@\S+\.\S+/;
       targetemail.className="form-input-alert";  
       targetemail.value="⚠ Invalid email! Please enter a valid email";
     }
-    // else if(!fos){
-    //    targetfos.className="register-form-select-alert";
-    //    targetfos.value="Please select an option."
-    // }
     else if(!password){
       targetpass.className="form-input-alert";
       targetpass.type="text";  
       targetpass.value="⚠ Please enter password";
     }
-    // else if(!confirmpass){
-    //   targetconfirmpass.className="form-input-alert"; 
-    //   targetconfirmpass.type="text";
-    //   targetconfirmpass.value="⚠ Please confirm password"
-    // }
-    // else if(password!==confirmpass){
-    //   targetconfirmpass.className="form-input-alert";
-    //   targetconfirmpass.type="text";
-    //   targetconfirmpass.value="⚠ Password and Confirm passsword should be same";
-    // }
     else{
     registerStudent();
     }
   }
-  //const studyOptions=["", "Information Technology", "Computer Science", "Mechanical", "Electrical", "Other"]
   return (
     <>
     <Studentnavbar/>
@@ -101,18 +86,6 @@ let emailcheck= /\S+@\S+\.\S+/;
          onFocus={(e=>{e.target.className="form-input" 
          e.target.value=""})}
          />
-         {/* <p className='form-label'>Field of study</p>
-         <select id="select" className='register-form-select' 
-         type='text' value={fos} 
-         onChange={(e=>{setFos(e.target.value)
-          e.target.className="register-form-select" 
-         e.target.value=""})}> */}
-
-          {/* dynamic mapping of options */}
-         {/* {studyOptions.map((element) => (<>
-           <option value={element}>{element}</option>
-           </>))}
-           </select> */}
          <p className='form-label'>Password</p>
          <input id="password" className='form-input' type='password' value={password} 
          onChange={(event=>setPassword(event.target.value))}
@@ -120,13 +93,7 @@ let emailcheck= /\S+@\S+\.\S+/;
          e.target.value=""
          e.target.type="password" })}
          />
-         {/* <p className='form-label'>Confirm Password</p>
-         <input id="confirm" className='form-input' type='password' value={confirmpass}
-          onChange={(event=>setConformpass(event.target.value))}
-          onFocus={(e=>{e.target.className="form-input"
-          e.target.value=""
-          e.target.type="password"})}
-          /> */}
+         
          <button className='form-button' onClick={handleRegister}>Register</button>
     </div>
     </>

@@ -47,7 +47,7 @@ const StudentCourses = () => {
       dispatch(profileLoading())
         axios({
           method: "post",
-          url: 'http://localhost:8000/student/loggedinstudent/',
+          url: 'http://localhost:8000/std/loggedinstudent/',
           data:{
             Email:token.Email,
             Password:token.Password

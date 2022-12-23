@@ -11,14 +11,12 @@ const StudentSubscriptions = () => {
   const {subs}=useSelector(state=>state.student.subscriptions);
   let dispatch=useDispatch();
 
-//_____________________________________________________________________________
 
-//_____________________________________________________________________________
   let getsubs=(x)=>{
     dispatch(subscriptionLoading());
     axios({
       method:"get",
-      url:`http://localhost:8000/courseapi/course/${x}/`,
+      url:`http://localhost:8000/exam/course/${x}/`,
     }).then((res)=>{
       subsarray.push(res.data);
       dispatch(subscriptionSuccess(subsarray));
@@ -28,7 +26,6 @@ const StudentSubscriptions = () => {
    
   }
 
-//_____________________________________________________________________________
   let fechSubs=(y)=>{
   let usableid=y.data[0].Student_id;
     axios({
@@ -45,12 +42,12 @@ const StudentSubscriptions = () => {
       
     })
   }
-//_____________________________________________________________________________
+
   let getuser=()=>{
     dispatch(profileLoading())
       axios({
         method: "post",
-        url: 'http://localhost:8000/student/loggedinstudent/',
+        url: 'http://localhost:8000/std/loggedinstudent/',
         data:{
           Email:token.Email,
           Password:token.Password
@@ -62,7 +59,7 @@ const StudentSubscriptions = () => {
       dispatch(profileError());
     })
     }
-//_____________________________________________________________________________
+
 
     useEffect(() => {
       subsarray=[]
@@ -75,7 +72,7 @@ const StudentSubscriptions = () => {
   return (
     <>
     <Studentnavbar/>
-    <h3 style={{color:"#28a745", textAlign:"center",fontSize:"1.5vw",padding:'0px',marginTop:'2vw',fontWeight:"500"}}>Your Subscriptions</h3>
+    <h3 style={{color:"rgb(4,4,170)", textAlign:"center",fontSize:"1.5vw",padding:'0px',marginTop:'2vw',fontWeight:"500"}}>Your Subscriptions</h3>
     {subs.map((ele)=>(
       <Subscribedcard {...ele}/>
     ))}

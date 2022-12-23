@@ -33,11 +33,11 @@ const TakeTest = () => {
       if(x==y){
         setMarks(prev=>prev+1);
         submit();
-        alert("Test Completed");
+        alert("Exam Completed");
       }
       else if(x!=y){
       submit();
-        alert("Test Completed");
+        alert("Exam Completed");
       } 
     }
 }
@@ -65,7 +65,7 @@ const TakeTest = () => {
       dispatch(profileLoading())
         axios({
           method: "post",
-          url: 'http://localhost:8000/student/loggedinstudent/',
+          url: 'http://localhost:8000/std/loggedinstudent/',
           data:{
             Email:token.Email,
             Password:token.Password

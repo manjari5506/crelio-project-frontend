@@ -19,7 +19,7 @@ const StudentLogin = () => {
     dispatch(loginLoading())
       axios({
           method:"post",
-          url: 'http://localhost:8000/student/student/',
+          url: 'http://localhost:8000/std/student/',
           data:{Email:email,
           Password:password}
       }).then((response)=>{
@@ -53,16 +53,6 @@ const StudentLogin = () => {
       targetpass.type="text";  
       targetpass.value="⚠ Please enter password";
     }
-    // else if(!confirmpass){
-    //   targetconfirmpass.className="form-input-alert"; 
-    //   targetconfirmpass.type="text";
-    //   targetconfirmpass.value="⚠ Please confirm password"
-    // }
-    // else if(password!==confirmpass){
-    //   targetconfirmpass.className="form-input-alert";
-    //   targetconfirmpass.type="text";
-    //   targetconfirmpass.value="⚠ Password and Confirm passsword should be same";
-    // }
     else{
     login();
     }
@@ -87,14 +77,6 @@ const StudentLogin = () => {
           e.target.value=""
           e.target.type="password"})}
           />
-         {/* <p className='form-label'>Confirm Password</p> */}
-         {/* <p id="cc" className='alertfield'>{alert}</p> */}
-         {/* <input id="confirm" className="form-input" type='password' value={confirmpass} 
-         onChange={(event=>setConformpass(event.target.value))}
-         onFocus={(e=>{e.target.className="form-input"
-         e.target.value=""
-         e.target.type="password"})}
-         /> */}
          <button className='form-button' onClick={handleLogin}>Login</button>
     </div>
     </>
