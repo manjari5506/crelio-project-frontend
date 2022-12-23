@@ -80,14 +80,6 @@ const Stafflogin = () => {
           e.target.value=""
           e.target.type="password"})}
           />
-         {/* <p className='form-label'>Confirm Password</p>
-         
-         <input id="confirm" className="form-input" type='password' value={confirmpass} 
-         onChange={(event=>setConformpass(event.target.value))}
-         onFocus={(e=>{e.target.className="form-input"
-         e.target.value=""
-         e.target.type="password"})}
-         /> */}
          <button className='form-button' onClick={handleLogin}>Login</button>
     </div>
     </>
