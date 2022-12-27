@@ -20,9 +20,9 @@ const StaffRegister = () => {
         method: "post",
         url: 'http://localhost:8000/staff/staff/',
         data:{
-          Name:name,
-          Email:email,
-          Password:password
+          name:name,
+          email:email,
+          password:password
         }
     }).then((response)=>{
      console.log(response.data)

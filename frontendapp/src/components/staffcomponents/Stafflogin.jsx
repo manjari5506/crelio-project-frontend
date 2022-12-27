@@ -11,16 +11,15 @@ const Stafflogin = () => {
   
   const[email,setEmail]=useState("");
   const[password,setPassword]=useState("");
-  //const[confirmpass,setConformpass]=useState("");
   const dispatch=useDispatch();
   const navigate = useNavigate();
   let login=()=>{
     dispatch(loginLoading())
         axios({
           method:"post",
-          url: 'http://localhost:8000/staff/staff',
-          data:{Email:email,
-          Password:password}
+          url: 'http://localhost:8000/staff/loginstaff/',
+          data:{email:email,
+          password:password}
       }).then((response)=>{
         sessionStorage.setItem("staff_token",JSON.stringify(response.data))
         console.log(response.data)
@@ -39,7 +38,6 @@ const Stafflogin = () => {
       //targetting elements to show alerts.
   let targetemail=document.getElementById("email");
   let targetpass=document.getElementById("password");
-  let targetconfirmpass=document.getElementById("confirm"); 
 
     let emailcheck= /\S+@\S+\.\S+/;
     if(!email){

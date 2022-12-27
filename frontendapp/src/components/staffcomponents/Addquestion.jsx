@@ -21,7 +21,7 @@ const style = {
   p: 4,
 };
 
-export default function Addquestion({Test_id, name}) {
+export default function Addquestion({Exam_id, name}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -31,7 +31,7 @@ export default function Addquestion({Test_id, name}) {
   const [op3,setOp3]=React.useState("");
   const [op4,setOp4]=React.useState("");
   const [corr,setCorr]=React.useState("");
-
+  //console.log(Exam_id);
   let dispatch=useDispatch();
   let addques=()=>{
  if(!question){
@@ -48,7 +48,7 @@ export default function Addquestion({Test_id, name}) {
         method:"post",
         url:"http://localhost:8000/exam/question/",
         data:{
-            Test:Test_id,
+            Exam:Exam_id,
             Question:question,
             Option1:op1,
             Option2:op2,
@@ -81,22 +81,22 @@ export default function Addquestion({Test_id, name}) {
          />
          <input className='course-form-input'
           style={{marginLeft:"auto",marginRight:"auto"}} type='text'
-          placeholder='Opton 1...'
+          placeholder='Option 1...'
           value={op1} onChange={(e)=>setOp1(e.target.value)}
           />
           <input id="email" className='course-form-input'
           style={{marginLeft:"auto",marginRight:"auto"}} type='text'
-          placeholder='Opton 2...'
+          placeholder='Option 2...'
           value={op2} onChange={(e)=>setOp2(e.target.value)}
           />
           <input id="email" className='course-form-input'
           style={{marginLeft:"auto",marginRight:"auto"}} type='text'
-          placeholder='Opton 3...'
+          placeholder='Option 3...'
           value={op3} onChange={(e)=>setOp3(e.target.value)}
           />
           <input id="email" className='course-form-input'
           style={{marginLeft:"auto",marginRight:"auto"}} type='text'
-          placeholder='Opton 4...'
+          placeholder='Option 4...'
           value={op4} onChange={(e)=>setOp4(e.target.value)}
           />
           <input id="email" className='course-form-input'

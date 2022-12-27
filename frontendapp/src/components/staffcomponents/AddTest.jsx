@@ -37,11 +37,11 @@ export default function AddTest({course_id, name}) {
         method:"post",
         url:"http://localhost:8000/exam/exam/",
         data:{
-            Test_name:tname,
+            Exam_name:tname,
             Course:course_id
         }
     }).then((response)=>{
-          dispatch(addtestSuccess());
+          dispatch(addtestSuccess(response.data));
           alert(`Exam successfully added to ${name}`);
           handleClose();
     }).catch((error)=>{
@@ -60,8 +60,8 @@ export default function AddTest({course_id, name}) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-         <h3 style={{color:"rgb(4,4,170",fontSize:"2vw",fontWeight:"400",textAlign:"center"}}>Add Test for {name}</h3>
-         <p className='form-label' style={{textAlign:"center"}}>Test name</p>
+         <h3 style={{color:"rgb(4,4,170",fontSize:"2vw",fontWeight:"400",textAlign:"center"}}>Add Exam for {name}</h3>
+         <p className='form-label' style={{textAlign:"center"}}>Exam name</p>
          <input id="email" className='course-form-input'
           style={{marginLeft:"auto",marginRight:"auto"}} type='text'
           value={tname}

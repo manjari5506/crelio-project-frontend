@@ -13,6 +13,7 @@ const Tests = () => {
 
   let getTest=()=>{
   dispatch(testLoading());
+  console.log(testlist);
     axios({
       method:"post",
       url:"http://localhost:8000/exam/getassignedexam/",
@@ -26,15 +27,15 @@ const Tests = () => {
     })
   }
   useEffect(()=>{
-    getTest();
+    //getTest();
   },[])
   return (<>
     <Studentnavbar/>
     {testlist ?(<>
     {testlist.map((ele)=>(<>
     <div style={{textAlign:"center",marginTop:"2vw"}}>
-    <NavLink to={`/student/taketest/${ele.Test_id}`}>
-    <button className='card-button' style={{width:"max-content"}}>{ele.Test_name}</button>
+    <NavLink to={`/student/taketest/${ele.Exam_id}`}>
+    <button className='card-button' style={{width:"max-content"}}>{ele.Exam_name}</button>
     </NavLink>
     </div>
     </>))}

@@ -11,7 +11,7 @@ const StudentSubscriptions = () => {
   const {subs}=useSelector(state=>state.student.subscriptions);
   let dispatch=useDispatch();
 
-
+//console.log(Student_id)
   let getsubs=(x)=>{
     dispatch(subscriptionLoading());
     axios({
@@ -27,7 +27,8 @@ const StudentSubscriptions = () => {
   }
 
   let fechSubs=(y)=>{
-  let usableid=y.data[0].Student_id;
+  let usableid=y.data[0].student_id;
+  console.log(y.data)
     axios({
       method:"post",
       url:"http://localhost:8000/exam/getsubscribed/",
@@ -36,7 +37,7 @@ const StudentSubscriptions = () => {
       }
     }).then((res)=>{
       (res.data.data).map((ele)=>{
-        getsubs(ele.Course);
+        getsubs(ele.course);
       })
     }).catch((err)=>{
       
@@ -49,8 +50,8 @@ const StudentSubscriptions = () => {
         method: "post",
         url: 'http://localhost:8000/std/loggedinstudent/',
         data:{
-          Email:token.Email,
-          Password:token.Password
+          Email:token.email,
+          Password:token.password
           }
     }).then((response)=>{
       dispatch(profileSuccess(response.data));

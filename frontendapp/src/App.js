@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Staffportal from './components/staffcomponents/Staffportal';
 import Stafflogin from './components/staffcomponents/Stafflogin';
 import StaffRegister from './components/staffcomponents/StaffRegister';
-//import AddCourse from './components/staffcomponents/AddCourse';
+import AddCourse from './components/staffcomponents/AddCourse';
 import StaffCourse from './components/staffcomponents/StaffCourse';
 import StaffStudent from './components/staffcomponents/StaffStudent';
 import StudentPortal from './components/studentcomponents/StudentPortal';
@@ -37,7 +37,7 @@ let student_token2=useSelector(state=>state.student.login.student_token);
            </>):
            (<>
            <Route exact path='/staff/profile' element={<Staffportal/>}></Route>
-           {/* <Route exact path='/staff/add-course' element={<AddCourse/>}></Route> */}
+           <Route exact path='/staff/add-course' element={<AddCourse/>}></Route>
            <Route exact path='/staff/courses' element={<StaffCourse/>}></Route>
            <Route exact path='/staff/students' element={<StaffStudent/>}></Route>
            </>)}

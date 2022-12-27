@@ -26,8 +26,8 @@ dispatch(profileLoading())
     method: "post",
     url: 'http://localhost:8000/staff/loggedinstaff/',
     data:{
-      Email:token.Email,
-      Password:token.Password
+      Email:token.email,
+      Password:token.password
       }
 }).then((response)=>{
   sessionStorage.setItem("staffid",JSON.stringify(response.data))
@@ -59,11 +59,11 @@ useEffect(()=>{
           </div>
           <div className="profile2">
 
-          <p className='profile-info'>{el.Name}</p>
+          <p className='profile-info'>{el.name}</p>
 
-          <p className='profile-info'>{el.Email}</p>
+          <p className='profile-info'>{el.email}</p>
 
-          <p className='profile-info'>{el.Staff_id}</p>
+          <p className='profile-info'>{el.staff_id}</p>
 
 
           </div>

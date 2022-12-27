@@ -23,7 +23,7 @@ dispatch(listLoading())
   // alert("Disabled successfully")
 }).catch((error)=>{
   dispatch(listError());
-  let errmessage=error.response.data.Email;
+  let errmessage=error.response.data.email;
   alert("Error :"+errmessage);
 })
 }
@@ -36,12 +36,12 @@ axios({
     method: "patch",
     url: `http://localhost:8000/std/student/${key}/`,
     data:{
-      isActive:false
+      active:false
     },
 }).then((response)=>{
   handlefetch();
 }).catch((error)=>{
-  let errmessage=error.response.data.Email;
+  let errmessage=error.response.data.email;
   alert("Error :"+errmessage);
 })
 }
@@ -50,7 +50,7 @@ let enable=(key)=>{
       method: "patch",
       url: `http://localhost:8000/std/student/${key}/`,
       data:{
-        isActive:true
+        active:true
       },
   }).then((response)=>{
     handlefetch();
@@ -63,22 +63,20 @@ let enable=(key)=>{
     <Staffnavbar/>
     <div style={{marginTop:"3vw",display:"grid",width:"95%",marginLeft:"auto",marginRight:"auto",
     position:"relative",gridTemplateColumns:"repeat(3, 1fr)"}} >
-        {data.map((ele) => (<>{(ele.isActive)?(<div id="card" style={{width:"90%", padding:"1vw", border:"1px solid black", marginLeft:"auto", 
-        marginRight:"auto",marginBottom:"1.5vw"}} key={ele.Student_id}>
+        {data.map((ele) => (<>{(ele.active)?(<div id="card" style={{width:"90%", padding:"1vw", border:"1px solid black", marginLeft:"auto", 
+        marginRight:"auto",marginBottom:"1.5vw"}} key={ele.student_id}>
 
-        <p className='profile-info'><b>Name :</b> {ele.Name}</p>
-        <p className='profile-info'><b>Email :</b> {ele.Email}</p>
-        <p className='profile-info'><b>Field_of_study :</b> {ele.Field_of_study}</p>
+        <p className='profile-info'><b>Name :</b> {ele.name}</p>
+        <p className='profile-info'><b>Email :</b> {ele.email}</p>
         <div style={{width:"fit-content",marginRight:"0px",marginLeft:"auto",marginTop:'0px',marginBottom:'0px'}}>
-        <button className='profile-button' onClick={()=>disable(ele.Student_id)}>Disable</button>
+        <button className='profile-button' onClick={()=>disable(ele.student_id)}>Disable</button>
         </div>
         </div>):(<div id="card" style={{width:"90%", padding:"1vw", border:"1px solid grey", marginLeft:"auto", 
         marginRight:"auto",marginBottom:"1.5vw",opacity:"70%"}} key={ele.Student_id}>
-        <p className='profile-info'><b>Name :</b> {ele.Name}</p>
-        <p className='profile-info'><b>Email :</b> {ele.Email}</p>
-        <p className='profile-info'><b>Field_of_study :</b> {ele.Field_of_study}</p>
+        <p className='profile-info'><b>Name :</b> {ele.name}</p>
+        <p className='profile-info'><b>Email :</b> {ele.email}</p>
         <div style={{width:"fit-content",marginRight:"0px",marginLeft:"auto",marginTop:'0px',marginBottom:'0px'}}>
-        <button className='profile-button-disabled' onClick={()=>enable(ele.Student_id)}>Enable</button>
+        <button className='profile-button-disabled' onClick={()=>enable(ele.student_id)}>Enable</button>
         </div>
         </div>)}</>))}
         </div>

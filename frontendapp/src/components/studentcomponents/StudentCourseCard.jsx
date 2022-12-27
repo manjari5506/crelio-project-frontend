@@ -17,13 +17,14 @@ const[author,setAuthor]=useState(null);
   }).catch((error)=>{
     alert(`${x} already subscribed.`);
   })
+  
   }
   let getauthor=()=>{
       axios({
         method: "get",
         url: `http://localhost:8000/staff/staff/${Author}/`,
     }).then((response)=>{
-    setAuthor(response.data.Name)
+    setAuthor(response.data.name)
     }).catch((error)=>{
     console.log(error);
     })
@@ -31,6 +32,7 @@ const[author,setAuthor]=useState(null);
     useEffect(()=>{
       getauthor();
     },[])
+    //console.log("-----"+author);
 
   return (
   <>

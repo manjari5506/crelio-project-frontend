@@ -10,8 +10,6 @@ const StudentRegister = () => {
   const[name, setName]=useState("");
   const[email,setEmail]=useState("");
   const[password,setPassword]=useState("");
-  //const[confirmpass,setConformpass]=useState("");
-  //const[fos, setFos]=useState("");
   const dispatch=useDispatch();
 //Api call to register a student
 let registerStudent =()=>{
@@ -20,15 +18,14 @@ axios({
     method: "post",
     url: 'http://localhost:8000/std/student/',
     data:{
-      Name:name,
-      Email:email,
-      //Field_of_study:fos,
-      Password:password
+      name:name,
+      email:email,
+      password:password
     }
 }).then((response)=>{
  console.log(response.data)
  dispatch(signupSuccess());
- if(response.data.Email===email){
+ if(response.data.email===email){
  alert("User registered succesfully.");
  }
 }).catch((error)=>{
@@ -44,8 +41,6 @@ axios({
 let targetname=document.getElementById("name");
 let targetemail=document.getElementById("email");
 let targetpass=document.getElementById("password");
-//let targetconfirmpass=document.getElementById("confirm");
-//let targetfos=document.getElementById("select")
 let emailcheck= /\S+@\S+\.\S+/;
     if(!name){
       targetname.className="form-input-alert";

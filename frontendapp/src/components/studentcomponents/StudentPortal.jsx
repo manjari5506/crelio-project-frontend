@@ -20,18 +20,19 @@ let logout=()=>{
 
   let getuser=()=>{
     dispatch(profileLoading())
+    //console.log(token,data);
       axios({
-        method: "all",
+        method: "post",
         url: 'http://localhost:8000/std/loggedinstudent/',
         data:{
-          Email:token.Email,
-          Password:token.Password
+          Email:token.email,
+          Password:token.password
           }
     }).then((response)=>{
       dispatch(profileSuccess(response.data));
     }).catch((error)=>{
       dispatch(profileError());
-      let errmessage=error.response.data.Email;
+      let errmessage=error.response.data.email;
       alert("Error :"+errmessage);
     })
     }
@@ -43,7 +44,7 @@ let logout=()=>{
     <>
         <Studentnavbar/>
       {data.map((el) => (<>
-       <div className='profile-wrapper' key={el.Student_id}>
+       <div className='profile-wrapper' key={el.student_id}>
        <h3 style={{color:"rgb(4,4,170)", textAlign:"center",fontSize:"2vw",padding:'0px',margin:'0px',fontWeight:"500"}}>Profile</h3>
           <div className='profile-main'>
           <div className="profile">
@@ -53,17 +54,17 @@ let logout=()=>{
 
           <p className='profile-label'>Student ID</p>
 
-          <p className='profile-label'>Field_of_study</p>
+          {/* <p className='profile-label'>Field_of_study</p> */}
           </div>
           <div className="profile2">
 
-          <p className='profile-info'>{el.Name}</p>
+          <p className='profile-info'>{el.name}</p>
 
-          <p className='profile-info'>{el.Email}</p>
+          <p className='profile-info'>{el.email}</p>
 
-          <p className='profile-info'>{el.Student_id}</p>
+          <p className='profile-info'>{el.student_id}</p>
 
-          <p className='profile-info'>{el.Field_of_study}</p>
+          {/* <p className='profile-info'>{el.Field_of_study}</p> */}
 
           </div>
           </div>

@@ -27,7 +27,7 @@ for(let i=0;i<tests.length;i++){
   }
 }
 }
-let id=data[0].Staff_id;
+let id=data[0].staff_id;
   let handlefetch=()=>{
     dispatch(getcourseLoading())
       axios({
@@ -82,10 +82,10 @@ let id=data[0].Staff_id;
       {test!==[] ?(<div>
         {test.map((ele)=>(<div id="card" style={{width:"90%", padding:"1vw", border:"1px solid black", marginLeft:"auto", 
         marginRight:"auto",marginBottom:"1.5vw",display:"flex"}}>
-        <p className='profile-info'><b>Test Name :</b> {ele.Test_name}</p>
+        <p className='profile-info'><b>Exam Name :</b> {ele.Exam_name}</p>
         {/* <p className='profile-info'><b>Description :</b> {ele.Test_name}</p> */}
         <div style={{width:"fit-content",marginRight:"10px",marginLeft:"auto",marginTop:'0px',marginBottom:'0px'}}>
-        <Addquestion Test_id={ele.Test_id} name={ele.Test_name} />
+        <Addquestion Exam_id={ele.Exam_id} name={ele.Exam_name} />
         </div>
         </div>))}
       </div>):(<></>)}

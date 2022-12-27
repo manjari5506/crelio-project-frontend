@@ -12,11 +12,12 @@ const StudentCourses = () => {
   let subscribed=[]
 //---
   let dispatch=useDispatch();
+  //console.log(datacourse);
   let getcources=()=>{
     dispatch(getcourseLoading());
       axios({
         method: "get",
-        url: 'http://localhost:8000/exam/exam/',
+        url: 'http://localhost:8000/exam/course/',
     }).then((response)=>{
       dispatch(getcourseSuccess(response.data));
     }).catch((error)=>{
@@ -26,16 +27,16 @@ const StudentCourses = () => {
     }
 //---
     let fechSubs=(y)=>{
-      let usableid=y.data[0].Student_id;
+      let usableid=y.data[0].student_id;
         axios({
           method:"post",
-          url:"http://localhost:8000/exam/getsubscribed/",
+          url:"http://localhost:8000/exam/assign/",
           data:{
             Student:usableid
           }
         }).then((res)=>{
           (res.data.data).map((ele)=>{
-            subscribed.push(ele.Course);
+            subscribed.push(ele.course);
           })
           getcources();
         }).catch((err)=>{
@@ -49,15 +50,15 @@ const StudentCourses = () => {
           method: "post",
           url: 'http://localhost:8000/std/loggedinstudent/',
           data:{
-            Email:token.Email,
-            Password:token.Password
+            Email:token.email,
+            Password:token.password
             }
       }).then((response)=>{
         dispatch(profileSuccess(response.data));
         fechSubs(response.data);
       }).catch((error)=>{
         dispatch(profileError());
-        let errmessage=error.response.data.Email;
+        let errmessage=error.response.data.email;
         alert("Error :"+errmessage);
       })
       } 
@@ -74,7 +75,7 @@ const StudentCourses = () => {
       <Studentnavbar/>    
       <h3 style={{color:"rgb(4,4,170)", textAlign:"center",fontSize:"2vw",padding:'0px',marginTop:'2vw',fontWeight:"600"}}>All Courses</h3>
       {datacourse?(<>{datacourse.map((element) => (<>
-      <StudentCourseCard key={element.Course_id} {...element} student={data[0].Student_id}/>
+      <StudentCourseCard key={element.Course_id} {...element} student={data[0].student_id}/>
       </>))}</>):(<></>)}
     </>
   )

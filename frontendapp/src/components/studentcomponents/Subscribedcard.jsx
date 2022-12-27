@@ -11,7 +11,7 @@ const Subscribedcard = ({Name,Description,Course_id,Author}) => {
           method: "get",
           url: `http://localhost:8000/staff/staff/${Author}/`,
       }).then((response)=>{
-      setAuthor(response.data.Name);
+      setAuthor(response.data.name);
       
       }).catch((error)=>{
       console.log(error);
