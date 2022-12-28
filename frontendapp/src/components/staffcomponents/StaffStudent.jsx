@@ -33,7 +33,7 @@ useEffect(()=>{
 //disable the student
 let disable=(key)=>{
 axios({
-    method: "patch",
+    method: "post",
     url: `http://localhost:8000/std/student/${key}/`,
     data:{
       active:false
@@ -47,7 +47,7 @@ axios({
 }
 let enable=(key)=>{
   axios({
-      method: "patch",
+      method: "post",
       url: `http://localhost:8000/std/student/${key}/`,
       data:{
         active:true

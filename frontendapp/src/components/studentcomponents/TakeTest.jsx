@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { profileError, profileLoading, profileSuccess, questionError, questionLoading, questionSuccess } from '../../redux/student/Actions';
 import '../styles/Coursecard.css';
 
@@ -12,10 +12,11 @@ const TakeTest = () => {
     const token=JSON.parse(sessionStorage.student_token);
     const {data}=useSelector(state=>state.student.profile)
     let dispatch=useDispatch();
-    let usableid=data[0].Student_id;
+    let usableid=data[0].student_id;
     const[index,setIndex]=useState(0);
     const[qnumber,setQnumber]=useState(1);
     const[marks,setMarks]=useState(0);
+    const navigate = useNavigate();
 
     let evaluate=(x,y)=>{
     if(index<qlist.length-1){
@@ -44,19 +45,21 @@ const TakeTest = () => {
     
     let testid=Number(test.testid)
        let submit=()=>{
-      // console.log(score);
+      //console.log(usableid);
       axios({
         method:"post",
         url:"http://localhost:8000/exam/score/",
         data:{
           Score:marks,
-          Test_id:testid,
+          Exam_id:testid,
           Student_id:usableid
         }
     }).then((res)=>{
       alert(`Submitted Successfully your score is ${marks}`);
+      navigate('/student/subscriptions');
     }).catch((err)=>{
-      alert("Error.");
+      alert("Exam with same marks already exist...");
+      navigate('/student/subscriptions');
     })
 
   }
@@ -67,8 +70,8 @@ const TakeTest = () => {
           method: "post",
           url: 'http://localhost:8000/std/loggedinstudent/',
           data:{
-            Email:token.Email,
-            Password:token.Password
+            Email:token.email,
+            Password:token.password
             }
       }).then((response)=>{
         dispatch(profileSuccess(response.data));
@@ -83,7 +86,7 @@ const TakeTest = () => {
             method:"post",
             url:"http://localhost:8000/exam/getquestions/",
             data:{
-              Test_id:test.testid
+              Exam_id:test.testid
             }
           }).then((res)=>{
             dispatch(questionSuccess(res.data.data));

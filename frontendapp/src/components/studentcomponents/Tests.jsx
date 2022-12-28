@@ -10,10 +10,10 @@ const Tests = () => {
   let course=useParams();
   const dispatch=useDispatch();
   let {testlist}=useSelector(state=>state.student.tests);
+  console.log(testlist);
 
   let getTest=()=>{
   dispatch(testLoading());
-  console.log(testlist);
     axios({
       method:"post",
       url:"http://localhost:8000/exam/getassignedexam/",
@@ -27,15 +27,16 @@ const Tests = () => {
     })
   }
   useEffect(()=>{
-    //getTest();
+    getTest();
   },[])
   return (<>
     <Studentnavbar/>
     {testlist ?(<>
-    {testlist.map((ele)=>(<>
+    {testlist?.map((ele)=>(<>
     <div style={{textAlign:"center",marginTop:"2vw"}}>
     <NavLink to={`/student/taketest/${ele.Exam_id}`}>
-    <button className='card-button' style={{width:"max-content"}}>{ele.Exam_name}</button>
+    <button className='card-button' style={{width:"max-content"}}>{ele.Exam_name
+}</button>
     </NavLink>
     </div>
     </>))}

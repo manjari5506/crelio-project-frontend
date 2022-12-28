@@ -4,7 +4,7 @@ import './styles/Staffnavbar.css';
 const Home = () => {
   return (
   <>
-  <h2>Welcome!!!</h2>
+  <h2>Welcome To Homepage</h2>
   </>
   )
 }

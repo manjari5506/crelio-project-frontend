@@ -30,7 +30,7 @@ const StudentCourses = () => {
       let usableid=y.data[0].student_id;
         axios({
           method:"post",
-          url:"http://localhost:8000/exam/assign/",
+          url:"http://localhost:8000/exam/getsubscribed/",
           data:{
             Student:usableid
           }

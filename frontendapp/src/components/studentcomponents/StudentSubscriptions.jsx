@@ -11,7 +11,7 @@ const StudentSubscriptions = () => {
   const {subs}=useSelector(state=>state.student.subscriptions);
   let dispatch=useDispatch();
 
-//console.log(Student_id)
+//console.log(subs)
   let getsubs=(x)=>{
     dispatch(subscriptionLoading());
     axios({
@@ -37,7 +37,7 @@ const StudentSubscriptions = () => {
       }
     }).then((res)=>{
       (res.data.data).map((ele)=>{
-        getsubs(ele.course);
+        getsubs(ele.Course);
       })
     }).catch((err)=>{
       

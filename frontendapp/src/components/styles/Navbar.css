@@ -8,18 +8,6 @@
     color:rgb(4, 4, 170);
     
 }
-/* .navbar-logo{
-    text-decoration: none;
-    font-size: 2vw;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-weight: 800;
-    color:black;
-    text-transform: uppercase 
-}
-.logonav:hover{
-        cursor: pointer;
-} */
 .menu{
       padding-top:.2vw;
       padding-bottom: .2vw;
@@ -56,11 +44,9 @@
 .menulinks:hover{
         cursor: pointer;
         color:rgb(4, 4, 170);
-        /* transition: all .5s ease-in-out 0s; */
 }
 .menulinks-active{
         color:rgb(4, 4, 170);
         text-decoration: none;
         font-weight: 500;
-        /* transition: all .5s ease-in-out 0s; */
 }       
