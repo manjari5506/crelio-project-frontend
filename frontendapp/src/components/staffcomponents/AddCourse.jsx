@@ -46,7 +46,7 @@ const AddCourse = () => {
          <p className='form-label'>Course Name</p>
          <input className='course-form-input' type='text' value={email} onChange={(event=>setEmail(event.target.value))}/>
          <p className='form-label'>Description</p>
-         <textarea rows = "7" className='course-form-textfield' placeholder="Maximum characters are 100" type='text' value={password} onChange={(event=>setPassword(event.target.value))}/>
+         <textarea rows = "7" className='course-form-textfield' placeholder="Enter description of the course..." type='text' value={password} onChange={(event=>setPassword(event.target.value))}/>
 
          <button className='form-button' onClick={handleAction}>Create</button>
     </div>

@@ -48,11 +48,11 @@ let logout=()=>{
        <h3 style={{color:"rgb(4,4,170)", textAlign:"center",fontSize:"2vw",padding:'0px',margin:'0px',fontWeight:"500"}}>Profile</h3>
           <div className='profile-main'>
           <div className="profile">
-          <p className='profile-label'>Name</p>
+          <p className='profile-label'>Name:</p>
 
-          <p className='profile-label'>Email</p>
+          <p className='profile-label'>Email:</p>
 
-          <p className='profile-label'>Student ID</p>
+          <p className='profile-label'>Student-id:</p>
 
           {/* <p className='profile-label'>Field_of_study</p> */}
           </div>

@@ -69,7 +69,8 @@ let id=data[0].staff_id;
     <div style={{marginTop:"3vw",display:"grid",width:"95%",marginLeft:"auto",marginRight:"auto",
     position:"relative",gridTemplateColumns:"repeat(2, 1fr)"}} >
       <div>
-        {courses.map((ele)=>(<div id="card" style={{width:"90%", padding:"1vw", border:"1px solid black", marginLeft:"auto", 
+      <h3>All Courses</h3>
+        {courses.map((ele)=>(<div id="card" style={{width:"90%", padding:"1vw", border:"none",backgroundColor:"rgb(218,216,216)",borderRadius:"10px", marginLeft:"auto", padding:"20px",
         marginRight:"auto",marginBottom:"1.5vw"}}>
 
         <p className='profile-info'><b>Name :</b> {ele.Name}</p>
@@ -80,7 +81,8 @@ let id=data[0].staff_id;
         </div>))}
       </div>
       {test!==[] ?(<div>
-        {test.map((ele)=>(<div id="card" style={{width:"90%", padding:"1vw", border:"1px solid black", marginLeft:"auto", 
+        <h3>All Exams</h3>
+        {test.map((ele)=>(<div id="card" style={{width:"90%", padding:"1vw", border:"none",backgroundColor:"rgb(218,216,216)", borderRadius:"10px" ,marginLeft:"auto",padding: "20px", 
         marginRight:"auto",marginBottom:"1.5vw",display:"flex"}}>
         <p className='profile-info'><b>Exam Name :</b> {ele.Exam_name}</p>
         {/* <p className='profile-info'><b>Description :</b> {ele.Test_name}</p> */}

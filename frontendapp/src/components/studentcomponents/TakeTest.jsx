@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { profileError, profileLoading, profileSuccess, questionError, questionLoading, questionSuccess } from '../../redux/student/Actions';
 import '../styles/Coursecard.css';
 
@@ -58,7 +58,7 @@ const TakeTest = () => {
       alert(`Submitted Successfully your score is ${marks}`);
       navigate('/student/subscriptions');
     }).catch((err)=>{
-      alert("Exam with same marks already exist...");
+      alert(`Exam with same marks already exist...`);
       navigate('/student/subscriptions');
     })
 

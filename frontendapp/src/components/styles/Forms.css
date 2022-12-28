@@ -5,13 +5,13 @@ input::-webkit-inner-spin-button {
 }
 .form-wrapper{
     max-width: min-content!important;
-    padding: 20px;
-    border: 1px solid rgb(149, 147, 147);
+    padding: 30px;
+    /* border: 1px solid rgb(149, 147, 147); */
     border-radius: 10px;
     display:flex;
     flex-direction: column;
     margin-top: 50px;
-    background-color: white;
+    background-color: rgb(218,216,216);
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
@@ -56,28 +56,28 @@ input::-webkit-inner-spin-button {
 }
 
 .course-form-input{
-    width:55vw;
+    width:50vw;
     height:2.25vw;
     font-size: 1.25vw;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0px;
     margin-bottom: 0px;
-    border:.5px solid rgb(4, 4, 170);
+    border:0px ;
     border-radius: 2.5px;
     outline: none;
     color:rgb(4, 4, 170);
     cursor: pointer;
 }
 .course-form-textfield{
-    width:55vw;
+    width:50vw;
     /* height:2vw; */
     font-size: 1.15vw;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0px;
     margin-bottom: 0px;
-    border:.5px solid rgb(4, 4, 170);
+    border:0px;
     border-radius: 2.5px;
     outline: none;
     color:rgb(4, 4, 170);
@@ -110,7 +110,7 @@ input::-webkit-inner-spin-button {
     border: none;
 }
 .form-button:hover{
-    background-color: rgb(164, 159, 159);
+    background-color: rgb(4, 4, 170);
     color: white;
     font-weight: 600;
     cursor: pointer;

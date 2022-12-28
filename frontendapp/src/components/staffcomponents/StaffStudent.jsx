@@ -62,8 +62,8 @@ let enable=(key)=>{
   return (<>
     <Staffnavbar/>
     <div style={{marginTop:"3vw",display:"grid",width:"95%",marginLeft:"auto",marginRight:"auto",
-    position:"relative",gridTemplateColumns:"repeat(3, 1fr)"}} >
-        {data.map((ele) => (<>{(ele.active)?(<div id="card" style={{width:"90%", padding:"1vw", border:"1px solid black", marginLeft:"auto", 
+    position:"relative",gridTemplateColumns:"repeat(1, 1fr)"}} >
+        {data.map((ele) => (<>{(ele.active)?(<div id="card" style={{width:"50%", padding:"1vw",border:"none",backgroundColor:"rgb(218,216,216)",borderRadius:"10px", marginLeft:"auto", 
         marginRight:"auto",marginBottom:"1.5vw"}} key={ele.student_id}>
 
         <p className='profile-info'><b>Name :</b> {ele.name}</p>

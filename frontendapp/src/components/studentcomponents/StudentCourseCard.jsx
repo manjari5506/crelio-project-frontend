@@ -38,7 +38,7 @@ const[author,setAuthor]=useState(null);
   <>
   <div className="coursecard-wrapper">
     <h2 className='coursecard-title'>{Name}</h2>
-    <button style={{width:"max-content",margin:"0px",color:"grey",fontWeight:"600",fontSize:"1vw",backgroundColor:"white",border:"1px solid"}} disabled>Author:{author}</button>
+    <button style={{width:"max-content",margin:"0px",color:"grey",fontWeight:"600",fontSize:"1vw",backgroundColor:"rgb(218,216,216)",border:"0px "}} disabled>Author:{author}</button>
     <p className='coursecard-desc'><b>Description:</b>{Description}</p>
     <button className='card-button' onClick={()=>{handleSubscribe(Name)}}>Subscribe</button>
     </div>

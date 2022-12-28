@@ -1,15 +1,17 @@
 .profile-wrapper{
-    width:fit-content !important;
-    margin-left: auto;
-    margin-right: auto;
+    width:80%;
+    height: fit-content;
     margin-top: 4vw;
     /* border:1px solid rgb(4, 4, 170); */
-    background-color: rgb(223, 232, 235);
+    background-color: rgb(218, 216, 216);
     padding:1.5vw;
     border-radius: 2.5px;
     /* background-color: white; */
     cursor: pointer;
     position: relative;
+    align-items: center;
+    margin-left: 100px;
+    text-align: center;
 }
 .profile-label{
     margin-top:1vw;
@@ -56,15 +58,15 @@
  .profile-button{
     margin-top: 10px;
     margin-bottom: 0px;
-    width: 7vw;
-    height: 1.8vw;
-    /* background-color: white; */
+    width: 10vw;
+    height: 3vw;
     color:rgb(4, 4, 170);
-    /* border:1px solid rgb(4, 4, 170); */
     border-radius: 2.5px;
     font-size: 1vw;
-    margin-left: 1vw;
-    margin-right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 5px;
 }
 .profile-button:hover{
     background-color: rgb(4, 4, 170);

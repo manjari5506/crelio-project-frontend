@@ -28,10 +28,10 @@ useEffect(()=>{
   return (
     <div className="coursecard-wrapper">
     <h2 className='coursecard-title'>{author}</h2>
-    <button style={{width:"max-content",margin:"0px",color:"grey",fontWeight:"600",fontSize:"1vw",backgroundColor:"white",border:"1px solid"}} disabled>Course:{Name}</button>
+    <button style={{width:"max-content",margin:"0px",color:"grey",fontWeight:"600",fontSize:"1vw",backgroundColor:"rgb(218, 216, 216)",border:"0px "}} disabled>Course:{Name}</button>
     <p className='coursecard-desc'><b>Description:</b>{Description}</p>
     <NavLink to={`/student/test/${Course_id}`}>
-    <button className='card-button' style={{width:"max-content"}}>Exam</button>
+    <button className='card-button' style={{width:"max-content"}}>Take Test</button>
     </NavLink>
     </div>
   )
