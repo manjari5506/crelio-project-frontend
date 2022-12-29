@@ -17,8 +17,11 @@ const AddCourse = () => {
    if(!email){
     alert("Please Enter Course Name");
    }
-   else if(password.length<100){
-    alert("Please enter atleast 100 characters");
+   else if(!password){
+    alert("Please enter Course description");
+   }
+   else if(password.length<50){
+    alert("Description should be atleast 50 characters");
    }
    else{
     dispatch(addcourseLoading());
@@ -32,6 +35,9 @@ const AddCourse = () => {
       }
     }).then((response)=>{
      dispatch(addcourseSuccess());
+     alert("Course added successfully");
+     setEmail("");
+     setPassword("");
     }).catch((error)=>{
       alert(error);
       dispatch(addcourseError());
@@ -44,9 +50,9 @@ const AddCourse = () => {
     <div className='form-wrapper'>
     <h3 style={{color:"rgb(4,4,170)", textAlign:"center",fontSize:"2vw",padding:'0px',margin:'0px',fontWeight:"500"}}>Add Course</h3>
          <p className='form-label'>Course Name</p>
-         <input className='course-form-input' type='text' value={email} onChange={(event=>setEmail(event.target.value))}/>
+         <input className='course-form-input' type='text' placeholder='Enter course name' value={email} onChange={(event=>setEmail(event.target.value))}/>
          <p className='form-label'>Description</p>
-         <textarea rows = "7" className='course-form-textfield' placeholder="Enter description of the course..." type='text' value={password} onChange={(event=>setPassword(event.target.value))}/>
+         <textarea rows = "7" className='course-form-textfield' placeholder="Enter description of the course.(Atleast 50 characters)" type='text' value={password} onChange={(event=>setPassword(event.target.value))}/>
 
          <button className='form-button' onClick={handleAction}>Create</button>
     </div>

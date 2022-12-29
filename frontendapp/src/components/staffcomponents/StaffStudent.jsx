@@ -23,7 +23,7 @@ dispatch(listLoading())
   // alert("Disabled successfully")
 }).catch((error)=>{
   dispatch(listError());
-  let errmessage=error.response.data.email;
+  let errmessage=error.response.data.Email;
   alert("Error :"+errmessage);
 })
 }
@@ -31,34 +31,34 @@ useEffect(()=>{
   handlefetch();
 },[])
 //disable the student
-let disable=(key)=>{
-axios({
-    method: "post",
-    url: `http://localhost:8000/std/student/${key}/`,
-    data:{
-      active:false
-    },
-}).then((response)=>{
-  handlefetch();
-}).catch((error)=>{
-  let errmessage=error.response.data.email;
-  alert("Error :"+errmessage);
-})
-}
-let enable=(key)=>{
-  axios({
-      method: "post",
-      url: `http://localhost:8000/std/student/${key}/`,
-      data:{
-        active:true
-      },
-  }).then((response)=>{
-    handlefetch();
-  }).catch((error)=>{
-    let errmessage=error.response.data.Email;
-    alert("Error :"+errmessage);
-  })
-  }
+// let disable=(key)=>{
+// axios({
+//     method: "post",
+//     url: `http://localhost:8000/std/student/${key}/`,
+//     data:{
+//       active:false
+//     },
+// }).then((response)=>{
+//   handlefetch();
+// }).catch((error)=>{
+//   let errmessage=error.response.data.Email;
+//   alert("Error :"+errmessage);
+// })
+// }
+// let enable=(key)=>{
+//   axios({
+//       method: "post",
+//       url: `http://localhost:8000/std/student/${key}/`,
+//       data:{
+//         active:true
+//       },
+//   }).then((response)=>{
+//     handlefetch();
+//   }).catch((error)=>{
+//     let errmessage=error.response.data.Email;
+//     alert("Error :"+errmessage);
+//   })
+//   }
   return (<>
     <Staffnavbar/>
     <div style={{marginTop:"3vw",display:"grid",width:"95%",marginLeft:"auto",marginRight:"auto",
@@ -68,16 +68,16 @@ let enable=(key)=>{
 
         <p className='profile-info'><b>Name :</b> {ele.name}</p>
         <p className='profile-info'><b>Email :</b> {ele.email}</p>
-        <div style={{width:"fit-content",marginRight:"0px",marginLeft:"auto",marginTop:'0px',marginBottom:'0px'}}>
+        {/* <div style={{width:"fit-content",marginRight:"0px",marginLeft:"auto",marginTop:'0px',marginBottom:'0px'}}>
         <button className='profile-button' onClick={()=>disable(ele.student_id)}>Disable</button>
-        </div>
+        </div> */}
         </div>):(<div id="card" style={{width:"90%", padding:"1vw", border:"1px solid grey", marginLeft:"auto", 
         marginRight:"auto",marginBottom:"1.5vw",opacity:"70%"}} key={ele.Student_id}>
         <p className='profile-info'><b>Name :</b> {ele.name}</p>
         <p className='profile-info'><b>Email :</b> {ele.email}</p>
-        <div style={{width:"fit-content",marginRight:"0px",marginLeft:"auto",marginTop:'0px',marginBottom:'0px'}}>
+        {/* <div style={{width:"fit-content",marginRight:"0px",marginLeft:"auto",marginTop:'0px',marginBottom:'0px'}}>
         <button className='profile-button-disabled' onClick={()=>enable(ele.student_id)}>Enable</button>
-        </div>
+        </div> */}
         </div>)}</>))}
         </div>
         </>)

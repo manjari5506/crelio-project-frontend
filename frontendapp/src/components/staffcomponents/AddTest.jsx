@@ -14,8 +14,9 @@ const style = {
   left: '50%',
   transform: 'translate(-50%)',
   width:'maxContent',
-  bgcolor: 'background.paper',
-  border: '1px solid rgb(4,4,170);',
+  //bgcolor: 'background.paper',
+  bgcolor: 'rgb(218,216,216)',
+  //border: '1px solid rgb(4,4,170);',
   boxShadow: 24,
   textAlign:'center',
   p: 4,
@@ -29,7 +30,7 @@ export default function AddTest({course_id, name}) {
   let dispatch=useDispatch();
   let addTest=()=>{
  if(!tname){
-    alert("Please enter Name.")
+    alert("Please enter Exam name.")
  }
  else{
     dispatch(addtestLoading());
@@ -42,11 +43,14 @@ export default function AddTest({course_id, name}) {
         }
     }).then((response)=>{
           dispatch(addtestSuccess(response.data));
-          alert(`Exam successfully added to ${name}`);
+          alert(`Exam successfully added to course ${name}`);
           handleClose();
+          window.location.reload();
     }).catch((error)=>{
            console.log(error);
+           alert("Exam with same name already exist!");
            dispatch(addtestError());
+           setTname("");
     })
  }
 }

@@ -42,6 +42,7 @@ export default function Addquestion({Exam_id, name}) {
  }
  else if(corr!==op1&&corr!==op2&&corr!==op3&&corr!==op4){
     alert("Correct ans should be in options.")
+    setCorr("");
  }
  else{
     axios({

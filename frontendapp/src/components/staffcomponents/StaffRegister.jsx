@@ -5,12 +5,14 @@ import { useState } from 'react';
 import { useDispatch} from 'react-redux';
 import { signupError, signupLoading, signupSuccess } from '../../redux/staff/Actions';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const StaffRegister = () => {
   
   const[name, setName]=useState("");
   const[email,setEmail]=useState("");
   const[password,setPassword]=useState("");
+  const navigate = useNavigate();
   
   const dispatch=useDispatch();
   //register function
@@ -27,12 +29,13 @@ const StaffRegister = () => {
     }).then((response)=>{
      console.log(response.data)
      dispatch(signupSuccess());
-     if(response.data.Email===email){
+     if(response.data.email===email){
      alert("User registered succesfully.");
      }
+     navigate('/staff/login');
     }).catch((error)=>{
       dispatch(signupError());
-      let errmessage=error.response.data.Email;
+      let errmessage=error.response.data.email;
       alert("Error :"+errmessage);
     })
     }

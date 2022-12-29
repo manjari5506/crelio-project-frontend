@@ -69,7 +69,7 @@ useEffect(()=>{
           </div>
           </div>
         <div style={{width:"fit-content",marginRight:"0px",marginLeft:"auto"}}>
-        <button className='profile-button' disabled>Edit</button>
+        {/* <button className='profile-button' disabled>Edit</button> */}
         <button className='profile-button' onClick={logout}>Log Out</button>
         </div>
        </div>

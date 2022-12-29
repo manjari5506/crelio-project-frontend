@@ -55,7 +55,7 @@ let id=data[0].staff_id;
       method:"get",
       url:'http://localhost:8000/exam/exam/'
      }).then((response)=>{
-      // console.log(response.data)
+       console.log("Response"+response.data)
       dispatch(gettestSuccess(response.data));
      }).catch((error)=>{
       dispatch(gettestError());
@@ -69,7 +69,7 @@ let id=data[0].staff_id;
     <div style={{marginTop:"3vw",display:"grid",width:"95%",marginLeft:"auto",marginRight:"auto",
     position:"relative",gridTemplateColumns:"repeat(2, 1fr)"}} >
       <div>
-      <h3>All Courses</h3>
+      <h3>Courses</h3>
         {courses.map((ele)=>(<div id="card" style={{width:"90%", padding:"1vw", border:"none",backgroundColor:"rgb(218,216,216)",borderRadius:"10px", marginLeft:"auto", padding:"20px",
         marginRight:"auto",marginBottom:"1.5vw"}}>
 
@@ -78,14 +78,16 @@ let id=data[0].staff_id;
         <div style={{width:"fit-content",marginRight:"0px",marginLeft:"auto",marginTop:'0px',marginBottom:'0px'}}>
         <AddTest course_id={ele.Course_id} name={ele.Name}/>
         </div>
+
         </div>))}
       </div>
+      
       {test!==[] ?(<div>
-        <h3>All Exams</h3>
+        <h3>Exams</h3>
         {test.map((ele)=>(<div id="card" style={{width:"90%", padding:"1vw", border:"none",backgroundColor:"rgb(218,216,216)", borderRadius:"10px" ,marginLeft:"auto",padding: "20px", 
         marginRight:"auto",marginBottom:"1.5vw",display:"flex"}}>
-        <p className='profile-info'><b>Exam Name :</b> {ele.Exam_name}</p>
-        {/* <p className='profile-info'><b>Description :</b> {ele.Test_name}</p> */}
+        <p className='profile-info'><b>Name :</b> {ele.Exam_name}</p>
+         {/* <p className='profile-info'><b>Course:</b> {ele.Course.Name}</p>  */}
         <div style={{width:"fit-content",marginRight:"10px",marginLeft:"auto",marginTop:'0px',marginBottom:'0px'}}>
         <Addquestion Exam_id={ele.Exam_id} name={ele.Exam_name} />
         </div>

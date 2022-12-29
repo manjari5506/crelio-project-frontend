@@ -5,12 +5,14 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signupError, signupLoading, signupSuccess } from '../../redux/student/Actions';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const StudentRegister = () => {
   const[name, setName]=useState("");
   const[email,setEmail]=useState("");
   const[password,setPassword]=useState("");
   const dispatch=useDispatch();
+  const navigate = useNavigate();
 //Api call to register a student
 let registerStudent =()=>{
 dispatch(signupLoading());
@@ -26,12 +28,13 @@ axios({
  console.log(response.data)
  dispatch(signupSuccess());
  if(response.data.email===email){
- alert("User registered succesfully.");
- }
+  alert("User registered succesfully.");
+  }
+  navigate('/staff/profile');
 }).catch((error)=>{
   dispatch(signupError());
-  //let errmessage=error.response.data.Email;
-  alert("Error :+errmessage");
+  let errmessage=error.response.data.email;
+  alert("Error :"+errmessage);
 })
 }
 
