@@ -58,7 +58,7 @@ const TakeTest = () => {
       alert(`Submitted Successfully your score is ${marks}`);
       navigate('/student/subscriptions');
     }).catch((err)=>{
-      alert(`Exam with same marks already exist...`);
+      alert(`Submitted Successfully your score is ${marks}`);
       navigate('/student/subscriptions');
     })
 
@@ -90,6 +90,7 @@ const TakeTest = () => {
             }
           }).then((res)=>{
             dispatch(questionSuccess(res.data.data));
+            //console.log("DATA"+res.data);
           }).catch((err)=>{
             dispatch(questionError());
           })

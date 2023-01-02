@@ -6,7 +6,7 @@ import Modal from '@mui/material/Modal';
 import '../styles/Forms.css';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { addtestError, addtestLoading, addtestSuccess } from '../../redux/staff/Actions';
+//import { addtestError, addtestLoading, addtestSuccess } from '../../redux/staff/Actions';
 
 const style = {
   position: 'absolute',
@@ -62,6 +62,7 @@ export default function Addquestion({Exam_id, name}) {
           handleClose();
     }).catch((error)=>{
            console.log(error);
+           alert("Question with same definition already exists.")
     })
  }
 }

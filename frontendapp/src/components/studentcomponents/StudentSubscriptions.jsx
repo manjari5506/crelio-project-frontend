@@ -37,6 +37,7 @@ const StudentSubscriptions = () => {
       }
     }).then((res)=>{
       (res.data.data).map((ele)=>{
+        console.log("Subs data"+res.data)
         getsubs(ele.Course);
       })
     }).catch((err)=>{

@@ -41,7 +41,7 @@ let id=data[0].staff_id;
 
     }).catch((error)=>{
       dispatch(getcourseError());
-      alert(error);
+      alert("No Courses available for this user...");
     })
     }
     useEffect(()=>{
@@ -55,7 +55,7 @@ let id=data[0].staff_id;
       method:"get",
       url:'http://localhost:8000/exam/exam/'
      }).then((response)=>{
-       console.log("Response"+response.data)
+      // console.log("Response"+response.data)
       dispatch(gettestSuccess(response.data));
      }).catch((error)=>{
       dispatch(gettestError());

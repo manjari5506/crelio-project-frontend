@@ -6,7 +6,7 @@ import '../styles/Coursecard.css';
 
 const Subscribedcard = ({Name,Description,Course_id,Author}) => {
     const[author,setAuthor]=useState(null);
-    console.log(Description)
+   // console.log(A)
     let getauthor=()=>{
         axios({
           method: "post",

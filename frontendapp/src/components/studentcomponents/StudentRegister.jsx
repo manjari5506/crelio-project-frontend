@@ -30,7 +30,7 @@ axios({
  if(response.data.email===email){
   alert("User registered succesfully.");
   }
-  navigate('/staff/profile');
+  navigate('/student/login');
 }).catch((error)=>{
   dispatch(signupError());
   let errmessage=error.response.data.email;
@@ -45,10 +45,15 @@ let targetname=document.getElementById("name");
 let targetemail=document.getElementById("email");
 let targetpass=document.getElementById("password");
 let emailcheck= /\S+@\S+\.\S+/;
+let namecheck = /^[A-Za-z][A-Za-z0-9_]/;
     if(!name){
       targetname.className="form-input-alert";
       targetname.value="⚠ Please enter name";
     }
+   else if(!namecheck.test(name)){
+     targetname.className="form-input-alert";  
+     targetname.value="⚠ Invalid name! Name can start by albhapets only.";
+   }
     else if(!email){
       targetemail.className="form-input-alert";
       targetemail.value="⚠ Please enter email";
