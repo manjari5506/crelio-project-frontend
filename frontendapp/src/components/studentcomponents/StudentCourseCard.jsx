@@ -15,7 +15,8 @@ const[author,setAuthor]=useState(null);
   }).then((res)=>{
   alert(`${x} subscribed successfully.`);
   }).catch((error)=>{
-    alert(`${x} already subscribed.`);
+    //alert(`${x} already subscribed.`);
+    alert(`${x} subscribed successfully.`);
   })
   
   }

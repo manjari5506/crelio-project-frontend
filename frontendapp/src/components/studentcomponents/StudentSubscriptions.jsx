@@ -18,6 +18,7 @@ const StudentSubscriptions = () => {
       method:"get",
       url:`http://localhost:8000/exam/course/${x}/`,
     }).then((res)=>{
+      console.log('res', res)
       subsarray.push(res.data);
       dispatch(subscriptionSuccess(subsarray));
     }).catch((err)=>{
@@ -28,7 +29,7 @@ const StudentSubscriptions = () => {
 
   let fechSubs=(y)=>{
   let usableid=y.data[0].student_id;
-  console.log(y.data)
+  //console.log("YY"+y.data)
     axios({
       method:"post",
       url:"http://localhost:8000/exam/getsubscribed/",
@@ -37,7 +38,7 @@ const StudentSubscriptions = () => {
       }
     }).then((res)=>{
       (res.data.data).map((ele)=>{
-        console.log("Subs data"+res.data)
+      // console.log("Getting subscription"+ele)
         getsubs(ele.Course);
       })
     }).catch((err)=>{

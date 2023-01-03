@@ -28,9 +28,10 @@ const StudentCourses = () => {
 //---
     let fechSubs=(y)=>{
       let usableid=y.data[0].student_id;
+      //console.log("USAB"+usableid);
         axios({
           method:"post",
-          url:"http://localhost:8000/exam/getsubscribed/",
+          url:`http://localhost:8000/exam/getsubscribed`,
           data:{
             Student:usableid
           }

@@ -52,7 +52,7 @@ let namecheck = /^[A-Za-z][A-Za-z0-9_]/;
     }
    else if(!namecheck.test(name)){
      targetname.className="form-input-alert";  
-     targetname.value="⚠ Invalid name! Name can start by albhapets only.";
+     targetname.value="⚠ Invalid name! Name should start with alphabet.";
    }
     else if(!email){
       targetemail.className="form-input-alert";
